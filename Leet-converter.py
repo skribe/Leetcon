@@ -5,7 +5,8 @@ from sys import exit
 
 def main():
     # code goes here
-    #     
+    #
+    a = 0
 
 def leet_encoder(unleet_word):
     char_map = {
