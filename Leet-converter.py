@@ -46,3 +46,7 @@ def leet_encoder(unleet_word):
             leet_word = leet_word + c
     
     return leet_word
+
+
+if __name__ == "__main__":
+    main()
