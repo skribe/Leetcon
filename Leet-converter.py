@@ -14,17 +14,13 @@ def main():
         while True:
             word = input("Word: ").lower().strip()
             if word.isalpha():
-                do_word(word)
+                leet_word = leet_encoder(word)
+                print(leet_word)
                 break
             else:
                 raise ValueError
     except ValueError:
         exit("Invalid input")
-
-def do_word(string):
-    for word in string.split():
-        leet_encoder(word)
-
 
 
 def leet_encoder(unleet_word):
