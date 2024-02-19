@@ -2,11 +2,23 @@
 
 #imports
 from sys import exit
+from random import randint, random, choice
 
 def main():
-    # code goes here
-    #
-    a = 0
+    # Initial version
+    # - get word
+    # - convert to leet
+    # - output leet word
+    
+    try:
+        while True:
+            word = input("Word: ").lower().strip()
+            if word.isalpha():
+                break
+            else:
+                raise ValueError
+    except ValueError:
+        exit("Invalid input")
 
 def leet_encoder(unleet_word):
     char_map = {
@@ -41,11 +53,8 @@ def leet_encoder(unleet_word):
     leet_word = ""
 
     for c in unleet_word:
-        if random() <= 0.30:
-            leet_letter = choice(char_map[c.lower()])
-            leet_word = leet_word + leet_letter
-        else:
-            leet_word = leet_word + c
+        leet_letter = choice(char_map[c.lower()])
+        leet_word = leet_word + leet_letter
     
     return leet_word
 
