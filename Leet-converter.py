@@ -5,14 +5,22 @@ from sys import exit
 from random import randint, random, choice
 
 def main():
-    # Initial version
-    # - get word
-    # - convert to leet
-    # - output leet word
+    # Version 2
+    # - get sentence
+    # - iterate through sentence
+    # - splitting into individual words
+    # ----> split words intto characters
+    # ----> check to see if character alphabetical
+    # ----> if alphabetical
+    # --------> convert to leet
+    # --------> add each leet character to leet word
+    # ----> else add raw character
+    # - recombine to create sentence
+    # - output leet sentence
     
     try:
         while True:
-            word = input("Word: ").lower().strip()
+            word = input("Sentence: ").lower().strip()
             if word.isalpha():
                 leet_word = leet_encoder(word)
                 print(leet_word)
