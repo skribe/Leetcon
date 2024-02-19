@@ -1,3 +1,12 @@
+"""
+Name:       Leet Converter
+by:         skribe
+Version:    2
+
+Description:
+    Takes a string and prints out the corresponding leetcode
+"""
+
 # Leet converter
 
 #imports
