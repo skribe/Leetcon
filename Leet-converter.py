@@ -11,7 +11,7 @@ Description:
 
 #imports
 from sys import exit
-from random import randint, random, choice
+from random import choice
 
 def main():
     # Version 2
