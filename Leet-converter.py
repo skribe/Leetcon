@@ -44,9 +44,9 @@ def main():
 
 
 
-def do_sentence(unleet_sentence):
-    sentence = unleet_sentence.lower().strip()
-    words = sentence.split()
+def do_sentence(sentence):
+    unleet_sentence = sentence.lower().strip()
+    words = unleet_sentence.split()
     for word in words:
         leet_word = leet_encoder(word)
         leet_words.append(leet_word)
