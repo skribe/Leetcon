@@ -31,8 +31,7 @@ def main():
     while True:
         try:
             sentence = input("Sentence: ")
-            if isinstance(sentence,str):
-                break
+            break
         except ValueError:
             exit("Invalid input")
 
