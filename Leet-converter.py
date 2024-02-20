@@ -18,7 +18,7 @@ def main():
     # - get sentence
     # - iterate through sentence
     # - splitting into individual words
-    # ----> split words intto characters
+    # ----> split words into characters
     # ----> check to see if character alphabetical
     # ----> if alphabetical
     # --------> convert to leet
@@ -27,19 +27,25 @@ def main():
     # - recombine to create sentence
     # - output leet sentence
     
-    try:
-        while True:
-            do_get_sentence()
+    # Checks for valid input
+    while True:
+        try:
+            sentence = input("Sentence: ")
+            if isinstance(sentence,str):
+                break
+        except ValueError:
+            exit("Invalid input")
 
-            break
-            else:
-                raise ValueError
-    except ValueError:
-        exit("Invalid input")
+    # Converts input to leet
+    leet_sentence = do_sentence(sentence)
+
+    # prints out converted leet sentence
+    print(leet_sentence)
 
 
-def do_get_sentence():
-    sentence = input("Sentence: ").lower().strip()
+
+def do_sentence(unleet_sentence):
+    sentence = unleet_sentence.lower().strip()
     words = sentence.split()
     for word in words:
         leet_word = leet_encoder(word)
