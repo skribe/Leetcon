@@ -39,7 +39,7 @@ def main():
     leet_sentence = do_sentence(sentence)
 
     # prints out converted leet sentence
-    print(leet_sentence)
+    print(' '.join(leet_sentence))
 
 
 # Splits the sentence into words and adds them to the list 'words'
@@ -51,6 +51,8 @@ def do_sentence(sentence):
     for word in words:
         leet_word = leet_encoder(word)
         leet_words.append(leet_word)
+    
+    return leet_words
 
 
 
@@ -91,7 +93,7 @@ def leet_encoder(unleet_word):
             leet_letter = choice(char_map[c.lower()])
             leet_word = leet_word + leet_letter
         else:
-            leet_word + c
+            leet_word = leet_word + c
     
     return leet_word
 
