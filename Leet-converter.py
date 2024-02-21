@@ -55,7 +55,7 @@ def do_sentence(sentence):
     return leet_words
 
 
-
+# does the conversion for each character into leet code
 def leet_encoder(unleet_word):
     char_map = {
         "a": ["4","@","^", "/\\"],
@@ -88,10 +88,15 @@ def leet_encoder(unleet_word):
 
     leet_word = ""
 
+    # cycles through the characters in each word
     for c in unleet_word:
+
+        # checks that the character is alphabetical
         if c.isalpha():
             leet_letter = choice(char_map[c.lower()])
             leet_word = leet_word + leet_letter
+       
+        # if not alphabetical then no conversion is done
         else:
             leet_word = leet_word + c
     
