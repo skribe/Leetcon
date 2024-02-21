@@ -30,7 +30,7 @@ def main():
     # Checks for valid input
     while True:
         try:
-            sentence = input("Sentence: ")
+            sentence = input("Sentence: ").lower().strip()
             break
         except ValueError:
             exit("Invalid input")
@@ -42,13 +42,16 @@ def main():
     print(leet_sentence)
 
 
-
+# Splits the sentence into words and adds them to the list 'words'
+# iterates over the list and then sends each member to be encoded
+# once encoded adds the encoded string to a new list 'leet_words'
 def do_sentence(sentence):
-    unleet_sentence = sentence.lower().strip()
-    words = unleet_sentence.split()
+    leet_words = []
+    words = sentence.split()
     for word in words:
         leet_word = leet_encoder(word)
         leet_words.append(leet_word)
+
 
 
 def leet_encoder(unleet_word):
@@ -84,7 +87,7 @@ def leet_encoder(unleet_word):
     leet_word = ""
 
     for c in unleet_word:
-        if word.isalpha():
+        if c.isalpha():
             leet_letter = choice(char_map[c.lower()])
             leet_word = leet_word + leet_letter
         else:
