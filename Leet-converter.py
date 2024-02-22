@@ -31,7 +31,7 @@ def main():
 
     # check if a correct amount has been parsed through command-line
     if len(argv) != 2:
-        exit("Usage python Leet-coder.py <filename>")
+        exit("Usage python Leet-coder.py <path/to/filename>")
 
     TXT_FILE = argv[1]
 
