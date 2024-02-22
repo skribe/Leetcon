@@ -2,7 +2,7 @@
 Leet Converter
 
 # Description
-Converts text to leet speak
+Reads a text file, converts the alphabetical characters to leet speak, writes to new file
 
 # Language
 Python
