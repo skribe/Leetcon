@@ -37,14 +37,18 @@ def main():
 
     try:
         with open(TXT_FILE) as f:
-            for line 
+            contents = f.read()
+    except IOError as e:
+        print(e)
+        exit()
+
     
     
-    try:
-        sentence = input("Sentence: ").lower().strip()
-        break
-    except ValueError:
-        exit("Invalid input")
+    # try:
+    #     sentence = input("Sentence: ").lower().strip()
+    #     break
+    # except ValueError:
+    #     exit("Invalid input")
 
     # Converts input to leet
     leet_sentence = do_sentence(sentence)
