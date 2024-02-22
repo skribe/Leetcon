@@ -10,7 +10,7 @@ Description:
 # Leet converter
 
 #imports
-from sys import exit
+from sys import exit, argv
 from random import choice
 
 def main():
@@ -28,13 +28,23 @@ def main():
     # - recombine to create leet text
     # - write file with leet sentence
     
-    # Checks for valid input
-    while True:
-        try:
-            sentence = input("Sentence: ").lower().strip()
-            break
-        except ValueError:
-            exit("Invalid input")
+
+    # check if a correct amount has been parsed through command-line
+    if len(argv) != 2:
+        exit("Usage python Leet-coder.py <filename>")
+
+    TXT_FILE = argv[1]
+
+    try:
+        with open(TXT_FILE) as f:
+            for line 
+    
+    
+    try:
+        sentence = input("Sentence: ").lower().strip()
+        break
+    except ValueError:
+        exit("Invalid input")
 
     # Converts input to leet
     leet_sentence = do_sentence(sentence)
