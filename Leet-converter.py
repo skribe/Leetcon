@@ -1,10 +1,10 @@
 """
 Name:       Leet Converter
 by:         skribe
-Version:    2
+Version:    3.0
 
 Description:
-    Takes a string and prints out the corresponding leetcode
+    Reads a text file, converts all the alphabetical characters to leetcode, then writes new file with that converted leetcode
 """
 
 # Leet converter
@@ -14,9 +14,10 @@ from sys import exit
 from random import choice
 
 def main():
-    # Version 2
-    # - get sentence
-    # - iterate through sentence
+    # Version 3.0
+    # - open file
+    # - get text
+    # - iterate through text
     # - splitting into individual words
     # ----> split words into characters
     # ----> check to see if character alphabetical
@@ -24,8 +25,8 @@ def main():
     # --------> convert to leet
     # --------> add each leet character to leet word
     # ----> else add raw character
-    # - recombine to create sentence
-    # - output leet sentence
+    # - recombine to create leet text
+    # - write file with leet sentence
     
     # Checks for valid input
     while True:
