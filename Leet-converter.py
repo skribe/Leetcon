@@ -19,35 +19,45 @@ import argparse
 def main():
 
     # check if a correct amount has been parsed through command-line
-    options = len(argv)
+    # options = len(argv)
     
-    if  argv[1] == '-h':
-        print(f"\n============================== HELP ===================================\nUsage: python Leet-coder.py <path/to/input-file> <path/to/output-file>\n\n-h help - this document")
-    elif options < 2 or options > 3:
-        exit("Usage: python Leet-coder.py <path/to/input-file> <path/to/output-file>")
-    else:
+    
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-i', help='Input file name', required=True)
+    parser.add_argument('-o', help='Output file name', required=True)
+    parser.parse_args()
+
+
+    
+    
+    # if  argv[1] == '-h':
+    #     print(f"\n============================== HELP ===================================\nUsage: python Leet-coder.py <path/to/input-file> <path/to/output-file>\n\n-h help - this document")
+    # elif options < 2 or options > 3:
+    #     exit("Usage: python Leet-coder.py <path/to/input-file> <path/to/output-file>")
+    # else:
+        
         # constant
-        INPUT_FILE = argv[1]
-        OUTPUT_FILE = argv[2]
+    INPUT_FILE = argv[1]
+    OUTPUT_FILE = argv[2]
 
         # tries to open input file.  If it fails then prints error to screen. 
         # if successful then does conversion
-        try:
-            with open(INPUT_FILE, 'r') as i:
-                line = i.readlines()
+    try:
+        with open(INPUT_FILE, 'r') as i:
+            line = i.readlines()
 
-                # Converts input to leet
-                leet_lines = do_lines(line)
+            # Converts input to leet
+            leet_lines = do_lines(line)
 
-            # writes to file leet-output.txt.  this will become user specifiable
-            with open(OUTPUT_FILE, 'a') as o:
-                # prints out converted leet sentence
-                o.writelines(leet_lines)
+        # writes to file leet-output.txt.  this will become user specifiable
+        with open(OUTPUT_FILE, 'a') as o:
+            # prints out converted leet sentence
+            o.writelines(leet_lines)
 
-        # prints the error message if it fails
-        except IOError as e:
-            print(e)
-            exit()
+    # prints the error message if it fails
+    except IOError as e:
+        print(e)
+        exit()
 
 
 # Splits the sentence into words and adds them to the list 'words'
