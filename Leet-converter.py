@@ -47,7 +47,7 @@ def main():
 # once encoded adds the encoded string to a new list 'leet_words'
 def do_lines(line):
     leet_words = []
-    # words = line.split()
+
     for word in line:
         leet_word = leet_encoder(word)
         leet_words.append(leet_word)
