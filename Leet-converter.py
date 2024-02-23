@@ -17,7 +17,7 @@ from random import choice
 def main():
 
     # check if a correct amount has been parsed through command-line
-    if len(argv) != 3:
+    if len(argv) < 2 or len(argv) > 3:
         exit("Usage python Leet-coder.py <path/to/input-file> <path/to/output-file>")
 
     # constant
