@@ -23,8 +23,8 @@ def main():
     
     
     parser = argparse.ArgumentParser()
-    parser.add_argument('-i', help='Input file name', required=True)
-    parser.add_argument('-o', help='Output file name', required=True)
+    parser.add_argument('source_file', help='Input filename', type=open)
+    parser.add_argument('dest_file', help='Output filename', type=argparse.FileType('a'))
     parser.parse_args()
 
 
