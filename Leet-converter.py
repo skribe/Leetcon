@@ -1,7 +1,7 @@
 """
 Name:       Leet Converter
 by:         skribe
-Version:    3.1
+Version:    3.2
 
 Description:
     Reads a text file, converts all the alphabetical characters to leetcode, then writes new file with that converted leetcode
@@ -17,25 +17,27 @@ from random import choice
 def main():
 
     # check if a correct amount has been parsed through command-line
-    if len(argv) != 2:
-        exit("Usage python Leet-coder.py <path/to/filename>")
+    if len(argv) != 3:
+        exit("Usage python Leet-coder.py <path/to/input-file> <path/to/output-file>")
 
     # constant
-    TXT_FILE = argv[1]
+    INPUT_FILE = argv[1]
+    OUTPUT_FILE = argv[2]
+
 
     # tries to open input file.  If it fails then prints error to screen. 
     # if successful then does conversion
     try:
-        with open(TXT_FILE, 'r') as f:
-            line = f.readlines()
+        with open(INPUT_FILE, 'r') as i:
+            line = i.readlines()
 
             # Converts input to leet
             leet_lines = do_lines(line)
 
         # writes to file leet-output.txt.  this will become user specifiable
-        with open('leet-output.txt', 'a') as d:
+        with open(OUTPUT_FILE, 'a') as o:
             # prints out converted leet sentence
-            d.writelines(leet_lines)
+            o.writelines(leet_lines)
 
     # prints the error message if it fails
     except IOError as e:
