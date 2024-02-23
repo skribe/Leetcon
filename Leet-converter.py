@@ -42,15 +42,13 @@ def main():
             # Converts input to leet
             leet_lines = do_lines(line)
 
-        with open(leet-output.txt, 'a') as d:
+        with open('leet-output.txt', 'a') as d:
             # prints out converted leet sentence
-            print(' '.join(leet_lines))
+            d.writelines(leet_lines)
 
     except IOError as e:
         print(e)
         exit()
-
-
 
 
 # Splits the sentence into words and adds them to the list 'words'
@@ -58,8 +56,8 @@ def main():
 # once encoded adds the encoded string to a new list 'leet_words'
 def do_lines(line):
     leet_words = []
-    words = line.split()
-    for word in words:
+    # words = line.split()
+    for word in line:
         leet_word = leet_encoder(word)
         leet_words.append(leet_word)
     
