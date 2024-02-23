@@ -36,33 +36,29 @@ def main():
     TXT_FILE = argv[1]
 
     try:
-        with open(TXT_FILE) as f:
-            contents = f.read()
+        with open(TXT_FILE, 'r') as f:
+            line = f.readlines()
+
+            # Converts input to leet
+            leet_lines = do_lines(line)
+
+        with open(leet-output.txt, 'a') as d:
+            # prints out converted leet sentence
+            print(' '.join(leet_lines))
+
     except IOError as e:
         print(e)
         exit()
 
-    
-    
-    # try:
-    #     sentence = input("Sentence: ").lower().strip()
-    #     break
-    # except ValueError:
-    #     exit("Invalid input")
 
-    # Converts input to leet
-    leet_sentence = do_sentence(sentence)
-
-    # prints out converted leet sentence
-    print(' '.join(leet_sentence))
 
 
 # Splits the sentence into words and adds them to the list 'words'
 # iterates over the list and then sends each member to be encoded
 # once encoded adds the encoded string to a new list 'leet_words'
-def do_sentence(sentence):
+def do_lines(line):
     leet_words = []
-    words = sentence.split()
+    words = line.split()
     for word in words:
         leet_word = leet_encoder(word)
         leet_words.append(leet_word)
