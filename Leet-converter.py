@@ -13,6 +13,7 @@ Description:
 from sys import exit, argv
 from random import choice
 
+
 def main():
 
     # check if a correct amount has been parsed through command-line
