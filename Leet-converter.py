@@ -12,37 +12,42 @@ Description:
 #imports
 from sys import exit, argv
 from random import choice
+from pathlib import Path
+import argparse
 
 
 def main():
 
     # check if a correct amount has been parsed through command-line
-    if len(argv) < 2 or len(argv) > 3:
-        exit("Usage python Leet-coder.py <path/to/input-file> <path/to/output-file>")
+    options = len(argv)
+    
+    if  argv[1] == '-h':
+        print(f"\n============================== HELP ===================================\nUsage: python Leet-coder.py <path/to/input-file> <path/to/output-file>\n\n-h help - this document")
+    elif options < 2 or options > 3:
+        exit("Usage: python Leet-coder.py <path/to/input-file> <path/to/output-file>")
+    else:
+        # constant
+        INPUT_FILE = argv[1]
+        OUTPUT_FILE = argv[2]
 
-    # constant
-    INPUT_FILE = argv[1]
-    OUTPUT_FILE = argv[2]
+        # tries to open input file.  If it fails then prints error to screen. 
+        # if successful then does conversion
+        try:
+            with open(INPUT_FILE, 'r') as i:
+                line = i.readlines()
 
+                # Converts input to leet
+                leet_lines = do_lines(line)
 
-    # tries to open input file.  If it fails then prints error to screen. 
-    # if successful then does conversion
-    try:
-        with open(INPUT_FILE, 'r') as i:
-            line = i.readlines()
+            # writes to file leet-output.txt.  this will become user specifiable
+            with open(OUTPUT_FILE, 'a') as o:
+                # prints out converted leet sentence
+                o.writelines(leet_lines)
 
-            # Converts input to leet
-            leet_lines = do_lines(line)
-
-        # writes to file leet-output.txt.  this will become user specifiable
-        with open(OUTPUT_FILE, 'a') as o:
-            # prints out converted leet sentence
-            o.writelines(leet_lines)
-
-    # prints the error message if it fails
-    except IOError as e:
-        print(e)
-        exit()
+        # prints the error message if it fails
+        except IOError as e:
+            print(e)
+            exit()
 
 
 # Splits the sentence into words and adds them to the list 'words'
