@@ -12,7 +12,6 @@ Description:
 #imports
 from sys import exit, argv
 from random import choice
-from pathlib import Path
 import argparse
 
 
