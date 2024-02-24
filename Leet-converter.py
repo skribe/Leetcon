@@ -17,10 +17,7 @@ import argparse
 
 def main():
 
-    # check if a correct amount has been parsed through command-line
-    # options = len(argv)
-    
-    
+    # check if a correct options have been parsed through command-line
     parser = argparse.ArgumentParser()
     parser.add_argument('source_file', metavar='source', help='Input filename')
     parser.add_argument('dest_file', metavar='dest', help='Output filename')
@@ -30,8 +27,8 @@ def main():
     INPUT_FILE = args.source_file
     OUTPUT_FILE = args.dest_file
 
-        # tries to open input file.  If it fails then prints error to screen. 
-        # if successful then does conversion
+    # tries to open input file.  If it fails then prints error to screen. 
+    # if successful then does conversion
     try:
         with open(INPUT_FILE, 'r') as i:
             line = i.readlines()
