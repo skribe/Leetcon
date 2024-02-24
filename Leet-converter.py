@@ -1,7 +1,7 @@
 """
 Name:       Leet Converter
 by:         skribe
-Version:    3.2
+Version:    3.2.2
 
 Description:
     Reads a text file, converts all the alphabetical characters to leetcode, then writes new file with that converted leetcode
