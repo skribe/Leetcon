@@ -27,6 +27,9 @@ def main():
     INPUT_FILE = args.source_file
     OUTPUT_FILE = args.dest_file
 
+    if INPUT_FILE == OUTPUT_FILE:
+        exit("ERROR: Both files can't be the same.")
+
     # tries to open input file.  If it fails then prints error to screen. 
     # if successful then does conversion
     try:
