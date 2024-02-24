@@ -23,22 +23,13 @@ def main():
     
     
     parser = argparse.ArgumentParser()
-    parser.add_argument('source_file', help='Input filename', type=open)
-    parser.add_argument('dest_file', help='Output filename', type=argparse.FileType('a'))
-    parser.parse_args()
-
-
-    
-    
-    # if  argv[1] == '-h':
-    #     print(f"\n============================== HELP ===================================\nUsage: python Leet-coder.py <path/to/input-file> <path/to/output-file>\n\n-h help - this document")
-    # elif options < 2 or options > 3:
-    #     exit("Usage: python Leet-coder.py <path/to/input-file> <path/to/output-file>")
-    # else:
+    parser.add_argument('source_file', metavar='source', help='Input filename')
+    parser.add_argument('dest_file', metavar='dest', help='Output filename')
+    args = parser.parse_args()
         
-        # constant
-    INPUT_FILE = argv[1]
-    OUTPUT_FILE = argv[2]
+    # constant
+    INPUT_FILE = args.source_file
+    OUTPUT_FILE = args.dest_file
 
         # tries to open input file.  If it fails then prints error to screen. 
         # if successful then does conversion
